@@ -8,6 +8,6 @@ module Puppet::Parser::Functions
     raise ArgumentError, 'subnet prefix too long' if args[1] <= ip.bits
     raise ArgumentError, 'subnet index out of bounds' if offset >= ip.size
 
-    ip[offset].ip + '/' + args[1]
+    ip[offset].ip.to_s + '/' + args[1].to_s
   end
 end
